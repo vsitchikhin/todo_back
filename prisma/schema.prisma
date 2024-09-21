@@ -16,13 +16,12 @@ datasource db {
 model Note {
   id    Int    @id @default(autoincrement())
   title String
-  Todo  Todo[]
+  todos Todo[]
 }
 
 model Todo {
   id         Int     @id @default(autoincrement())
   title      String
-  content    String
   isComplete Boolean
   noteId     Int
   note       Note    @relation(fields: [noteId], references: [id])
