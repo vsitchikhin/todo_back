@@ -1,5 +1,5 @@
 export interface TodoDto {
-  id: number;
+  id?: number;
   title: string;
   isComplete: boolean;
   noteId: number;

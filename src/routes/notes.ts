@@ -26,8 +26,8 @@ export default function getNotesRouter(db: PrismaClient) {
   })
 
   router.delete('/:id', async (req, res) => {
-    await useNotesController(db).deleteNote(req.params.id);
-    res.json('successfully deleted note');
+    const data = await useNotesController(db).deleteNote(req.params.id);
+    res.json(data);
   })
 
   return router;

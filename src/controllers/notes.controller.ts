@@ -74,9 +74,7 @@ export default function useNotesController(db: PrismaClient) {
         where: {
           id: parseInt(id),
         },
-        data: {
-          ...notePayload,
-        },
+        data: notePayload,
       });
 
       await db.$disconnect()
@@ -96,14 +94,14 @@ export default function useNotesController(db: PrismaClient) {
           noteId: parseInt(id)
         }
       })
-      await db.note.delete({
+      const res = await db.note.delete({
         where: {
           id: parseInt(id)
         }
       })
 
       await db.$disconnect()
-      return
+      return res
     } catch (error) {
       console.error(error)
       await db.$disconnect()
