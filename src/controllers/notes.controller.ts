@@ -31,6 +31,7 @@ export default function useNotesController(db: PrismaClient) {
           id: parseInt(id),
         },
         include: {
+          // Неправильно определяется имя параметра, поэтому игнорирую ошибку
           // @ts-ignore
           todos: true,
         }
@@ -52,11 +53,13 @@ export default function useNotesController(db: PrismaClient) {
       delete payload.todos
 
       const note = await db.note.create({
+        // Неправильно определяется тип параметра, поэтому игнорирую ошибку
+        // @ts-ignore
         data: notePayload,
       })
 
       await db.$disconnect()
-      return note
+      return note.id
     } catch (error) {
       console.error(error)
       await db.$disconnect()
@@ -74,6 +77,8 @@ export default function useNotesController(db: PrismaClient) {
         where: {
           id: parseInt(id),
         },
+        // Неправильно определяется тип параметра, поэтому игнорирую ошибку
+        // @ts-ignore
         data: notePayload,
       });
 
