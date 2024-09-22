@@ -1,4 +1,4 @@
-import {TodoDto} from "./todos.types.ts";
+import {TodoDto} from "./todos.types";
 
 export interface NoteDto {
   id?: number;

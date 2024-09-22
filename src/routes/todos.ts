@@ -1,6 +1,6 @@
 import express from "express";
 import {PrismaClient} from '@prisma/client';
-import useTodosController from "../controllers/todos.controller.ts";
+import useTodosController from "../controllers/todos.controller";
 
 export default function getTodosRouter(db: PrismaClient) {
   const router = express.Router();

@@ -1,8 +1,8 @@
 import express, {Express} from 'express';
 import dotenv from 'dotenv';
 import {db} from './database/db';
-import getNotesRouter from "./routes/notes.ts";
-import getTodosRouter from "./routes/todos.ts";
+import getNotesRouter from "./routes/notes";
+import getTodosRouter from "./routes/todos";
 import cors from 'cors';
 
 dotenv.config();

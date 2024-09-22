@@ -1,5 +1,5 @@
 import {PrismaClient} from "@prisma/client";
-import {TodoDto} from "../types/todos.types.ts";
+import {TodoDto} from "../types/todos.types";
 
 export default function useTodosController(db: PrismaClient) {
   async function createTodo(payload: TodoDto) {

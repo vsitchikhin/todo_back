@@ -1,6 +1,6 @@
 import express from "express";
 import {PrismaClient} from '@prisma/client';
-import useNotesController from "../controllers/notes.controller.ts";
+import useNotesController from "../controllers/notes.controller";
 
 export default function getNotesRouter(db: PrismaClient) {
   const router = express.Router();

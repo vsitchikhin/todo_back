@@ -1,5 +1,5 @@
 import {PrismaClient} from "@prisma/client";
-import {NoteDto} from "../types/notes.types.ts";
+import {NoteDto} from "../types/notes.types";
 
 export default function useNotesController(db: PrismaClient) {
   async function getAllNotes() {
